@@ -6,25 +6,28 @@ import { useRouter } from "next/router"
 export default function Home() {
   const router = useRouter()
   const { name } = router.query
+  const mssg = `${!name ? "Hey" : name}, you're invited.`
   return (
     <div className={styles.container}>
       <Head>
-        <title>{name},{" you're invited."}</title>
-        <meta name="title" content="Intechgration's grad party" />
+        <title>{mssg}</title>
+        <meta name="title" content={mssg} />
         <meta name="description" content="invitation to join intech's first cohort grad party 🎉" />
+
 
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://invite.intechgration.io/"/>
-        <meta property="og:title" content="Intechgration's grad party"/>
+        <meta property="og:title" content={mssg}/>
         <meta property="og:description" content="invitation to join intech's first cohort grad party 🎉"/>
-        <meta property="og:image" content=""/>
+        <meta property="og:image" content="public/meta-media-link.png"/>
 
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:url" content="https://invite.intechgration.io/"/>
-        <meta property="twitter:title" content="Intechgration's grad party"/>
+        <meta property="twitter:title" content={mssg}/>
         <meta property="twitter:description" content="invitation to join intech's first cohort grad party 🎉"/>
-        <meta property="twitter:image" content=""/>
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="twitter:image" content="public/meta-media-link.png"/>
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

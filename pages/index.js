@@ -20,7 +20,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Hey <span className={styles.name}>{name === undefined ? "there" : name}!</span>
         </h1>
-        <h1 className={styles.inviteText}>You're invited to intechgration's grad party  🎉  </h1>
+        <h1 className={styles.inviteText}>{"You're invited to intechgration's grad party  🎉 "}</h1>
 
 
 

@@ -76,8 +76,8 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
-  width: 50%;
+  min-width: 60vw;
+  width: 30%;
 }
 
 .card {

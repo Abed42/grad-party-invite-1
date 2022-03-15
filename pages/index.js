@@ -6,22 +6,24 @@ import { useRouter } from "next/router"
 export default function Home() {
   const router = useRouter()
   const { name } = router.query
+  const mssg = `${!name ? "Hey" : name}, you're invited.`
   return (
     <div className={styles.container}>
       <Head>
-        <title>{name === undefined ? "Hey" : name},{" you're invited."}</title>
-        <meta name="title" content="Intechgration's grad party" />
+        <title>{mssg}</title>
+        <meta name="title" content={mssg} />
         <meta name="description" content="invitation to join intech's first cohort grad party 🎉" />
+
 
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://invite.intechgration.io/"/>
-        <meta property="og:title" content="Intechgration's grad party"/>
+        <meta property="og:title" content={mssg}/>
         <meta property="og:description" content="invitation to join intech's first cohort grad party 🎉"/>
         <meta property="og:image" content="public/meta-media-link.png"/>
 
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:url" content="https://invite.intechgration.io/"/>
-        <meta property="twitter:title" content="Intechgration's grad party"/>
+        <meta property="twitter:title" content={mssg}/>
         <meta property="twitter:description" content="invitation to join intech's first cohort grad party 🎉"/>
         <meta property="twitter:image" content="public/meta-media-link.png"/>
         {/* <link rel="icon" href="/favicon.ico" /> */}
